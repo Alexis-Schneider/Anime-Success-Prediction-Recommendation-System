@@ -25,6 +25,7 @@ The main challenge was consolidating heterogeneous data (Staff, Casting, Metadat
 We identified and removed variables that betray the "future" (e.g., *Members*, *Favorites*) or constitute a mathematical leak regarding the target variable.
 
 ![Leakage Correlation Matrix](images/image_leakage.png)
+
 *Figure 1: Statistical analysis justifying the removal of "post-broadcast" variables (Rank, Members) to prevent artificial overfitting.*
 
 ---
