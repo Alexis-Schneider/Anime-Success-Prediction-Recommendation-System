@@ -1,4 +1,4 @@
-# 🎬 Anime Success Prediction & Recommendation System
+# Anime Success Prediction & Recommendation System
 ### Modeling Critical and Commercial Success using Machine Learning
 
 > **Authors**: Alexis Schneider & Kelvin Wong  
@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Executive Summary
+## Executive Summary
 In an industry producing thousands of works annually, predicting success before broadcast is a strategic challenge. This project leverages the **Kaggle Anime Dataset** (relational, 13 CSV files) to:
 
 1.  **Predict Quality (Score)**: Estimating the average user rating (0-10).
@@ -18,7 +18,7 @@ In an industry producing thousands of works annually, predicting success before 
 
 ---
 
-## ⚙️ 1. Dataset Construction & Anti-Leakage Strategy
+## 1. Dataset Construction & Anti-Leakage Strategy
 The main challenge was consolidating heterogeneous data (Staff, Casting, Metadata) while strictly avoiding **Data Leakage**.
 
 ### Rigorous Leakage Management
@@ -29,7 +29,7 @@ We identified and removed variables that betray the "future" (e.g., *Members*, *
 
 ---
 
-## 🛠 2. Feature Engineering & Insights
+## 2. Feature Engineering & Insights
 The final matrix ($N=15105, P=122$) relies on an advanced encoding strategy to handle high cardinality (>1200 Studios):
 
 *   **Target Encoding**: Replacing labels (Studios, Voice Actors) with their historical success averages (`studio_avg_score`, `voice_actor_avg`).
@@ -39,11 +39,12 @@ The final matrix ($N=15105, P=122$) relies on an advanced encoding strategy to h
 Exploratory analysis confirms that success is not random. There is a clear correlation between technical resources invested and final popularity.
 
 ![Scatter Plot Staff vs Popularity](images/image_scatter_staff.png)
-Figure 2: Relationship between Staff Size (X-Axis) and Popularity (Y-Axis). Note the structural advantage of Manga adaptations (Blue points).*
+
+*Figure 2: Relationship between Staff Size (X-Axis) and Popularity (Y-Axis). Note the structural advantage of Manga adaptations (Blue points).*
 
 ---
 
-## 🤖 3. Modeling: From Linear to Boosting
+## 3. Modeling: From Linear to Boosting
 We compared a Baseline approach (Ridge/Lasso) against Ensemble methods (Random Forest, XGBoost).
 
 ### Residual Analysis & Model Selection
@@ -62,7 +63,7 @@ Linear models plateaued ($R^2 \approx 60\%$) due to their inability to capture n
 
 ---
 
-## 💡 4. Application: Hybrid Recommendation
+## 4. Application: Hybrid Recommendation
 Beyond prediction, we implemented a recommendation system to solve the "discoverability" problem.
 
 *   **Step 1 (Content Filtering)**: KNN on the feature matrix to find similar works.
@@ -73,5 +74,5 @@ Beyond prediction, we implemented a recommendation system to solve the "discover
 
 ---
 
-## 🚀 Conclusion
+## Conclusion
 This project demonstrates that using **production proxies** (Staff, Casting) combined with **Gradient Boosting** algorithms allows for accurate prediction of an anime's commercial potential before it is even aired.
