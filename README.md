@@ -1,8 +1,6 @@
 # 🎬 Anime Success Prediction & Recommendation System
 ### Modeling Critical and Commercial Success using Machine Learning
 
-![Project Banner](images/image_titre.png)
-
 > **Authors**: Alexis Schneider & Kelvin Wong  
 > **Type**: Supervised Regression & Recommendation System  
 > **Tech Stack**: Python, Scikit-learn, XGBoost, Pandas, Matplotlib
@@ -41,7 +39,7 @@ The final matrix ($N=15105, P=122$) relies on an advanced encoding strategy to h
 Exploratory analysis confirms that success is not random. There is a clear correlation between technical resources invested and final popularity.
 
 ![Scatter Plot Staff vs Popularity](images/image_scatter_staff.png)
-*Figure 2: Relationship between Staff Size (X-Axis) and Popularity (Y-Axis). Note the structural advantage of Manga adaptations (Blue points).*
+Figure 2: Relationship between Staff Size (X-Axis) and Popularity (Y-Axis). Note the structural advantage of Manga adaptations (Blue points).*
 
 ---
 
