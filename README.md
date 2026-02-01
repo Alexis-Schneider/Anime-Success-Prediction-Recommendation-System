@@ -1,7 +1,7 @@
 # 🎬 Anime Success Prediction & Recommendation System
 ### Modeling Critical and Commercial Success using Machine Learning
 
-![Project Banner](image_titre.png)
+![Project Banner](images/image_titre.png)
 
 > **Authors**: Alexis Schneider & Kelvin Wong  
 > **Type**: Supervised Regression & Recommendation System  
@@ -26,7 +26,7 @@ The main challenge was consolidating heterogeneous data (Staff, Casting, Metadat
 ### Rigorous Leakage Management
 We identified and removed variables that betray the "future" (e.g., *Members*, *Favorites*) or constitute a mathematical leak regarding the target variable.
 
-![Leakage Correlation Matrix](image_leakage.png)
+![Leakage Correlation Matrix](images/image_leakage.png)
 *Figure 1: Statistical analysis justifying the removal of "post-broadcast" variables (Rank, Members) to prevent artificial overfitting.*
 
 ---
@@ -40,7 +40,7 @@ The final matrix ($N=15105, P=122$) relies on an advanced encoding strategy to h
 ### Insight: The Impact of Investment
 Exploratory analysis confirms that success is not random. There is a clear correlation between technical resources invested and final popularity.
 
-![Scatter Plot Staff vs Popularity](image_scatter_staff.png)
+![Scatter Plot Staff vs Popularity](images/image_scatter_staff.png)
 *Figure 2: Relationship between Staff Size (X-Axis) and Popularity (Y-Axis). Note the structural advantage of Manga adaptations (Blue points).*
 
 ---
@@ -51,7 +51,7 @@ We compared a Baseline approach (Ridge/Lasso) against Ensemble methods (Random F
 ### Residual Analysis & Model Selection
 Linear models plateaued ($R^2 \approx 60\%$) due to their inability to capture non-linearities (threshold effects). **XGBoost** was selected for its ability to model complex interactions (e.g., *Genre x Studio*).
 
-![XGBoost Residual Analysis](image_residus.png)
+![XGBoost Residual Analysis](images/image_residus.png)
 *Figure 3: Residual analysis of the final model showing a quasi-Gaussian distribution of errors (left) and good homoscedasticity (right), validating statistical robustness.*
 
 ### Final Performance
@@ -70,7 +70,7 @@ Beyond prediction, we implemented a recommendation system to solve the "discover
 *   **Step 1 (Content Filtering)**: KNN on the feature matrix to find similar works.
 *   **Step 2 (Ranking)**: Weighting results by the popularity predicted by XGBoost to avoid recommending low-quality obscure works.
 
-![Recommendation Architecture](image_reco_system.png)
+![Recommendation Architecture](images/image_reco_system.png)
 *Figure 4: System Architecture. The hybrid approach prioritizes popular/high-quality works (e.g., My Hero Academia) over unknown works sharing the same tags.*
 
 ---
